@@ -1,0 +1,16 @@
+[Unit]
+Description=Encrypted Chat Server
+After=network.target
+
+[Service]
+Type=simple
+User=rsafir
+WorkingDirectory=/home/rsafir/messaging-app
+ExecStart=/usr/bin/python3 /home/rsafir/messaging-app/server.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
